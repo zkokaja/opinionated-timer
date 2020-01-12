@@ -32,7 +32,9 @@ When the time's up, I'll let you know:
 
 ## Installation
 
-Build with XCode then go to Product -> Archive to get a `.app` file.
+1. Download the app from GitHub releases
+   [here](https://github.com/zkokaja/opinionated-timer/releases/download/v1.0/OpinionatedTimer.app.zip).
+2. Build with XCode then go to Product -> Archive to get a `.app` file.
 
 ## Developer
 
