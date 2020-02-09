@@ -3,6 +3,10 @@
 Opinionated Timer
 </h1>
 
+<a href="https://github.com/zkokaja/opinionated-timer/releases/tag/v1.1">
+    <img src="images/release-badge.svg" alt="Version 1.1 Release Badge" />
+</a>
+
 I'm a timer "menulet" with a restricted set of functionality. There are other
 timers around that have fancy bells and whistles, but I'm basic. I can only set
 timers for 5, 25, or 55 minutes. This may seem limiting, but if you allow me to
