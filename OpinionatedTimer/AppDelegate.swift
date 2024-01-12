@@ -10,20 +10,26 @@ import OSLog
 import Cocoa
 import UserNotifications
 
-@NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
 
-    @IBOutlet weak var statusMenu: NSMenu!
+let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+
+class AppDelegate: NSObject, NSApplicationDelegate {
+    
+    var statusBar: NSStatusBar!
+    var statusItem: NSStatusItem!
     let notificationCenter = UNUserNotificationCenter.current()
-    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
-        // Set the icon
-        let icon = NSImage(named: "tomatoIcon")
-        icon?.isTemplate = true // inverts in dark mode
-        statusItem.button?.image = icon        
-        statusItem.menu = statusMenu
+        statusBar = NSStatusBar()
+        statusItem = statusBar.statusItem(withLength: NSStatusItem.squareLength)
+        statusItem.menu = createMenu()
+        
+        if let button = statusItem.button {
+            button.image = NSImage(named: "tomatoIcon")
+            button.image?.isTemplate = true
+            button.toolTip = "OpinionatedTimer \(appVersion ?? "")"
+        }
         
         // Request user access if needed
         let center = UNUserNotificationCenter.current()
@@ -33,9 +39,29 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
     }
+    
+    func createMenu() -> NSMenu {
+        let menu = NSMenu()
+        
+        let fiveMins = NSMenuItem(title: "5 Minutes", action: #selector(setTimer), keyEquivalent: "")
+        menu.addItem(fiveMins)
+        
+        let twentyFiveMins = NSMenuItem(title: "25 Minutes", action: #selector(setTimer), keyEquivalent: "")
+        menu.addItem(twentyFiveMins)
 
-    @IBAction func setTimer(_ sender: NSMenuItem) {
-
+        let fiftyFiveMins = NSMenuItem(title: "55 Minutes", action: #selector(setTimer), keyEquivalent: "")
+        menu.addItem(fiftyFiveMins)
+        
+        menu.addItem(.separator())
+        
+        let quit = NSMenuItem(title: "Quit", action: #selector(quitClicked), keyEquivalent: "")
+        menu.addItem(quit)
+        
+        return menu
+    }
+    
+    @objc func setTimer(_ sender: NSMenuItem) {
+        
         // Determine time interval
         var time: Double = 1
         if sender.title == "5 Minutes" {
@@ -49,7 +75,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         os_log("Setting a timer for %d minutes", type: .info, Int(time))
-      
+        
         // Create the notification content
         let content = UNMutableNotificationContent()
         content.title = "Time is up"
@@ -62,24 +88,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Create the request
         let uuidString = UUID().uuidString
         let request = UNNotificationRequest(identifier: uuidString,
-                    content: content, trigger: trigger)
-
+                                            content: content, trigger: trigger)
+        
         // Schedule the request with the system.
         notificationCenter.add(request) { (error) in
-           if error != nil {
-            os_log("Notification request error: %s", type: .error, error.debugDescription)
-           }
+            if error != nil {
+                os_log("Notification request error: %s", type: .error, error.debugDescription)
+            }
         }
     }
-
+    
     // Quit
-    @IBAction func quitClicked(sender: NSMenuItem) {
+    @objc func quitClicked(_sender: NSMenuItem) {
         NSApplication.shared.terminate(self)
     }
-
+    
     func applicationWillTerminate(_ aNotification: Notification) {
         // Remove scheduled timers
         notificationCenter.removeAllPendingNotificationRequests()
     }
-
+    
 }
