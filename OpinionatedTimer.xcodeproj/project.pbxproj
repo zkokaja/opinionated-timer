@@ -3,22 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB4701392B5177E400D9A4A7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4701382B5177E400D9A4A7 /* main.swift */; };
 		BB72254723C95498008A9AB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB72254623C95498008A9AB7 /* AppDelegate.swift */; };
 		BB72254923C95499008A9AB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB72254823C95499008A9AB7 /* Assets.xcassets */; };
-		BB72254C23C95499008A9AB7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB72254A23C95499008A9AB7 /* MainMenu.xib */; };
 		BB72255623C95E96008A9AB7 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB72255523C95E96008A9AB7 /* UserNotifications.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB4701382B5177E400D9A4A7 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		BB72254323C95498008A9AB7 /* OpinionatedTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpinionatedTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB72254623C95498008A9AB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB72254823C95499008A9AB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BB72254B23C95499008A9AB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		BB72254D23C95499008A9AB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB72254E23C95499008A9AB7 /* OpinionatedTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OpinionatedTimer.entitlements; sourceTree = "<group>"; };
 		BB72255523C95E96008A9AB7 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -55,10 +54,9 @@
 		BB72254523C95498008A9AB7 /* OpinionatedTimer */ = {
 			isa = PBXGroup;
 			children = (
+				BB4701382B5177E400D9A4A7 /* main.swift */,
 				BB72254623C95498008A9AB7 /* AppDelegate.swift */,
 				BB72254823C95499008A9AB7 /* Assets.xcassets */,
-				BB72254A23C95499008A9AB7 /* MainMenu.xib */,
-				BB72254D23C95499008A9AB7 /* Info.plist */,
 				BB72254E23C95499008A9AB7 /* OpinionatedTimer.entitlements */,
 			);
 			path = OpinionatedTimer;
@@ -98,8 +96,9 @@
 		BB72253B23C95498008A9AB7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1510;
 				ORGANIZATIONNAME = zzada;
 				TargetAttributes = {
 					BB72254223C95498008A9AB7 = {
@@ -131,7 +130,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB72254923C95499008A9AB7 /* Assets.xcassets in Resources */,
-				BB72254C23C95499008A9AB7 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,21 +141,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB72254723C95498008A9AB7 /* AppDelegate.swift in Sources */,
+				BB4701392B5177E400D9A4A7 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		BB72254A23C95499008A9AB7 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BB72254B23C95499008A9AB7 /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		BB72254F23C95499008A9AB7 /* Debug */ = {
@@ -186,6 +174,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -193,9 +182,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -210,7 +201,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -246,6 +238,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -253,9 +246,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -264,7 +259,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -280,12 +276,13 @@
 				CODE_SIGN_ENTITLEMENTS = OpinionatedTimer/OpinionatedTimer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = OpinionatedTimer/Info.plist;
+				DEAD_CODE_STRIPPING = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				PRODUCT_BUNDLE_IDENTIFIER = zzada.OpinionatedTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -299,12 +296,13 @@
 				CODE_SIGN_ENTITLEMENTS = OpinionatedTimer/OpinionatedTimer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = OpinionatedTimer/Info.plist;
+				DEAD_CODE_STRIPPING = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				PRODUCT_BUNDLE_IDENTIFIER = zzada.OpinionatedTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
