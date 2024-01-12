@@ -91,9 +91,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                                             content: content, trigger: trigger)
         
         // Schedule the request with the system.
+        var success = true
         notificationCenter.add(request) { (error) in
             if error != nil {
                 os_log("Notification request error: %s", type: .error, error.debugDescription)
+                success = false
+            }
+        }
+        
+        if success {
+            statusItem.button?.image = NSImage(named: "filledTomato")
+            statusItem.button?.image?.isTemplate = false
+            
+            Timer.scheduledTimer(withTimeInterval: time * 60, repeats: false) { _ in
+                self.statusItem.button?.image = NSImage(named: "tomatoIcon")
+                self.statusItem.button?.image?.isTemplate = true
             }
         }
     }
