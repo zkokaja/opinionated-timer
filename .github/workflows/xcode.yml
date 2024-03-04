@@ -16,7 +16,6 @@ jobs:
 
     - name: Build App
       run: |
-        sudo xcode-select -s /Applications/Xcode_11.3.app/Contents/Developer
         xcodebuild build -project 'OpinionatedTimer.xcodeproj' -scheme 'OpinionatedTimer' -destination 'generic/platform=macOS' -configuration Release CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
         xcodebuild -scheme 'OpinionatedTimer' -configuration Release archive -archivePath OT.xcarchive
         xcodebuild -exportArchive -exportPath . -archivePath OT.xcarchive/ -exportOptionsPlist OpinionatedTimer/exportOptions.plist
