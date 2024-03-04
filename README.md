@@ -51,6 +51,6 @@ from the [User Notifications] developer library.
 ## Attribution
 
 Icons made by [Freepik](https://www.flaticon.com/authors/freepik) from [www.flaticon.com](www.flaticon.com).
+<a href="https://www.freepik.com/icon/tomato_676503">Icon by Freepik</a>
 
 [Pomodoro Technique]: https://en.wikipedia.org/wiki/Pomodoro_Technique
-[User Notifications]:https://developer.apple.com/documentation/usernotifications/

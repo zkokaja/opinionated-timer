@@ -1,17 +1,16 @@
 {
   "images" : [
     {
-      "filename" : "tomato-filled@1.png",
+      "filename" : "filled1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "tomato-filled@2.png",
+      "filename" : "filled2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "tomato-filled@3.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
@@ -19,5 +18,8 @@
   "info" : {
     "author" : "xcode",
     "version" : 1
+  },
+  "properties" : {
+    "template-rendering-intent" : "original"
   }
 }
