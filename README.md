@@ -1,6 +1,6 @@
 <h1>
-<img src="images/tomato-color.svg" alt="Tomato Icon" width="64" />
-Opinionated Timer
+   <img src="OpinionatedTimer/Assets.xcassets/AppIcon.appiconset/icon_128px.png" width="64" height="64" align="left" >
+   Opinionated Timer
 </h1>
 
 ![GitHub Release](https://img.shields.io/github/v/release/zkokaja/opinionated-timer)
@@ -49,8 +49,6 @@ from the [User Notifications] developer library.
 
 
 ## Attribution
-
-Icons made by [Freepik](https://www.flaticon.com/authors/freepik) from [www.flaticon.com](www.flaticon.com).
 <a href="https://www.freepik.com/icon/tomato_676503">Icon by Freepik</a>
 
 [Pomodoro Technique]: https://en.wikipedia.org/wiki/Pomodoro_Technique
