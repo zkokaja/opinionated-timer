@@ -45,10 +45,9 @@ Options:
 ## Developer
 
 The code is very simply and self explanatory. The main functionality comes
-from the [User Notifications] developer library.
+from the `User Notifications` developer library.
 
 
-## Attribution
 <a href="https://www.freepik.com/icon/tomato_676503">Icon by Freepik</a>
 
 [Pomodoro Technique]: https://en.wikipedia.org/wiki/Pomodoro_Technique
