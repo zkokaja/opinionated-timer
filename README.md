@@ -3,9 +3,9 @@
 Opinionated Timer
 </h1>
 
-<a href="https://github.com/zkokaja/opinionated-timer/releases/tag/v1.1">
-    <img src="images/release-badge.svg" alt="Version 1.1 Release Badge" />
-</a>
+![GitHub Release](https://img.shields.io/github/v/release/zkokaja/opinionated-timer)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/zkokaja/opinionated-timer/xcode.yml)
+![GitHub License](https://img.shields.io/github/license/zkokaja/opinionated-timer)
 
 I'm a timer "menulet" with a restricted set of functionality. There are other
 timers around that have fancy bells and whistles, but I'm basic. I can only set
